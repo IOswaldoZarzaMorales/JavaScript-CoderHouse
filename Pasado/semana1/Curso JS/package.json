@@ -1,0 +1,15 @@
+{
+  "name": "hols-mundo",
+  "version": "1.0.0",
+  "description": "primer proyecto",
+  "main": "index.js",
+  "scripts": {
+    "saludar" :"node 1-hola-mundo.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "holamundo"
+  ],
+  "author": "oswaldo morales",
+  "license": "ISC"
+}
