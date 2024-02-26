@@ -95,16 +95,70 @@ const productos = [
 
 //*Ejemplo de dos objetos con filter
 
-const sillas = productos.filter((producto) => producto.nombre.includes('Silla'));
-console.log(sillas);
+// const sillas = productos.filter((producto) => producto.nombre.includes('Silla'));
+// console.log(sillas);
 
 //?Some() => Recorrer el Array y responder true o false si encuentra o no un elemento que cumpla con la condicion
 
-const cisne =animales.some((animal) => animal === "Cisne");
-console.log(cisne);
+// const cisne =animales.some((animal) => animal === "Cisne");
+// console.log(cisne);
 
-const caballo =animales.some((animal) => animal === "Caballo");
-console.log(caballo);
+// const caballo =animales.some((animal) => animal === "Caballo");
+// console.log(caballo);
 
 //?map () => Recorrer el Array y retornar uno nuevo con los elementos transformados del Array original 
-//!minuto 33
+
+// const nombres = productos.map((producto) => producto.nombre);
+// console.log(nombres);//*Extraer datos en un array nuevo
+
+const preciosActualizados = productos.map((producto) => {
+    return{
+        nombre: producto.nombre,
+        precio: producto.precio * 1.5
+    }
+})
+
+// console.log(preciosActualizados);
+// console.log(productos);
+
+//? reduce () =>  recorrer el array y retornarnos un único valor tras hacer una operacion sobre los elementos
+
+// const total = numeros.reduce((acumulador, numero) => acumulador + numero, 0)
+// console.log(total);
+
+const totalCarrito = productos.reduce((acumulador,producto ) => acumulador + producto.precio, 0);
+// console.log(totalCarrito);
+
+// ?sort() => reordenar el array segun el criterio que le ordenemos 
+// numeros.sort((a, b) => a - b);
+// console.log(numeros);
+// // numeros.sort((a, b) => a + b);
+// console.log(numeros);
+//?MATH 
+
+const numeroDecimal1 = 1.25;
+const numeroDecimal2 = 1.75;
+
+//? min() => Retornar el numero minimo de un listado
+//console.log(Math. min(50, 12, 37, 17, 25, 6));
+//? max() => Retornar el numero minimo de un listado
+//console.log(Math. max(50, 12, 37, 17, 25, 6));
+//?ceil() => Retornar el numero que le indiquemos redondeando hacia arriba
+//console.log(Math.ceil(numeroDecimal1));
+//console.log(Math.ceil(numeroDecimal2));
+//?floor => Retornar el numero que le indiquemos redondeado hacia abajo
+//console.log(Math.floor(numeroDecimal1));
+//console.log(Math.floor(numeroDecimal2));
+//?random() => Retornar un numero aleatorio entre 0 inclusive y 1 inclusive
+// console.log(Math.random());
+// console.log(Math.round(Math.random()*50));
+// console.log(Math.round(Math.random()*50 + 20));
+
+//console.log(Math.floor(Math.random() * 3 + 1));
+
+function generarNumero(min, max) {
+    return Math.floor(Math.random()*(max - min + 1) + min)
+}
+
+const numeroRandom = generarNumero(100, 200)
+console.log(numeroRandom);
